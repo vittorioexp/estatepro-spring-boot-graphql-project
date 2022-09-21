@@ -1,0 +1,35 @@
+type Query {
+    agents(ids: [String]): [Agent]
+    agencies(ids: [Int]): [Agency]
+    properties(ids: [Int]): [Property]
+}
+
+type Agent {
+    id: String! #UUID
+    fullName: String!
+    agency: Agency!
+}
+
+type Agency {
+    id: Int!
+    name: String!
+    taxCode: String!
+    agents: [Agent]!
+    properties: [Property]!
+}
+
+type Property {
+    id: Int!
+    name: String!
+    type: PropertyType
+    longitude: String
+    latitude: String
+    agency: Agency!
+}
+
+enum PropertyType {
+    WOODED_LAND,
+    AGRICULTURAL_LAND,
+    BUILDING_LAND
+}
+
