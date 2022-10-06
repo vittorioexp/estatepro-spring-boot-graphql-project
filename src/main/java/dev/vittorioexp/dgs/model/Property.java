@@ -6,11 +6,9 @@ import org.hibernate.Hibernate;
 import javax.persistence.*;
 import java.util.Objects;
 
-@Getter
-@Setter
-@ToString
-@RequiredArgsConstructor
+@Data
 @Builder
+@NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "property")
@@ -30,7 +28,7 @@ public class Property {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private PropertyType type;
 
     private String longitude;
@@ -41,16 +39,4 @@ public class Property {
     @JoinColumn(name = "agency_id")
     private Agency agency;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Property property = (Property) o;
-        return id != null && Objects.equals(id, property.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
 }

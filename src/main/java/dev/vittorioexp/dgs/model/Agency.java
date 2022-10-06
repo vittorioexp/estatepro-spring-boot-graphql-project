@@ -7,11 +7,9 @@ import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
-@Getter
-@Setter
-@ToString
-@RequiredArgsConstructor
+@Data
 @Builder
+@NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "agency")
@@ -50,16 +48,4 @@ public class Agency {
     @ToString.Exclude
     private List<Property> properties;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Agency agency = (Agency) o;
-        return id != null && Objects.equals(id, agency.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
 }
