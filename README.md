@@ -2,7 +2,7 @@ Java DGS Framework example (with Spring Data JPA)
 =====
 
 This repository is an example application for the [DGS Framework](https://netflix.github.io/dgs). 
-The example is a standalone GraphQL server in Java with a PostgresQL database.
+The example is a standalone GraphQL server in Java that interacts with a PostgreSQL database via Spring Data JPA.
 
 It shows the following features:
 * Datafetchers
