@@ -1,13 +1,13 @@
 type Query {
-    agents(ids: [String]): [Agent]
     agencies(ids: [Int]): [Agency]
+    agents(ids: [String]): [Agent]
     properties(ids: [Int]): [Property]
 }
 
-type Agent {
-    id: String! #UUID
-    fullName: String!
-    agency: Agency!
+type Mutation {
+    createProperties(properties: [PropertyInput]): [Property]
+    updateProperties(properties: [PropertyInput]): [Property]
+    deleteProperties(ids: [Int]) : [Int]
 }
 
 type Agency {
@@ -18,13 +18,30 @@ type Agency {
     properties: [Property]!
 }
 
+type Agent {
+    id: String! #UUID
+    fullName: String!
+    agency: Agency!
+}
+
 type Property {
     id: Int!
     name: String!
     type: PropertyType
-    longitude: String
     latitude: String
+    longitude: String
+    purchaseDate: String
     agency: Agency!
+}
+
+input PropertyInput {
+    id: Int
+    name: String
+    type: PropertyType
+    latitude: String
+    longitude: String
+    purchaseDate: String
+    agencyId: Int
 }
 
 enum PropertyType {

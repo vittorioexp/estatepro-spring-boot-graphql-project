@@ -1,10 +1,12 @@
 package dev.vittorioexp.dgs.model;
 
-import lombok.*;
-import org.hibernate.Hibernate;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Objects;
+import java.time.LocalDate;
 
 @Data
 @Builder
@@ -34,6 +36,8 @@ public class Property {
     private String longitude;
 
     private String latitude;
+
+    private LocalDate purchaseDate;
 
     @ManyToOne
     @JoinColumn(name = "agency_id")
