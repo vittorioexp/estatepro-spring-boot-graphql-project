@@ -42,7 +42,9 @@ Starting the example
 ----
 
 The example requires Java 17 and PostgreSQL 14.
+
 Create a PostgreSQL database, using the database name, username, and password contained in `application.yml`. 
+
 Run the application in an IDE using its main class or using Gradle: 
 
 ```
