@@ -1,8 +1,7 @@
-Java DGS Framework example (with Spring Data JPA)
+Spring Boot GraphQL API example
 =====
 
-This repository is an example application for the [DGS Framework](https://netflix.github.io/dgs). 
-The example is a standalone GraphQL server in Java that interacts with a PostgreSQL database via Spring Data JPA.
+This repository is an example application for the [Spring Boot framework](https://spring.io/projects/spring-boot) that employs the Netflix [DGS framework](https://netflix.github.io/dgs) to expose a GraphQL API and that interacts with a [PostgreSQL DBMS](https://www.postgresql.org/) via [Spring Data JPA](https://spring.io/projects/spring-data-jpa). 
 
 It shows the following features:
 * Datafetchers
@@ -23,14 +22,7 @@ There are other examples of using the DGS framework as well:
 Agencies, Agents, and Properties
 ----
 
-This example is built around three main types: Agencies, Agents, and Properties.
-
-Each real estate agency has an ID, a name, a tax code, and is associated with N agents and N properties. 
-
-Each real estate agent has a UUID, a full name and is associated with only one agency. 
-
-Each property has an ID, a name, a type (enumeration), coordinates, a purchase date and is associated with only one real estate agency.
-Each property can be created, updated or deleted using a mutation.
+This example is built around three main types: Agencies, Agents, and Properties. Each real estate agency has an ID, a name, a tax code, and is associated with N agents and N properties. A real estate agent has a UUID, a full name and is associated with only one agency. Each property has an ID, a name, a type (enumeration), coordinates, a purchase date and is associated with only one real estate agency. A property can be created, updated or deleted using a mutation.
 
 
 The schema file is located in the following path.
