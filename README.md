@@ -1,4 +1,4 @@
-EstatePro Spring Boot GraphQL API
+EstatePro Spring Boot GraphQL project
 =====
 
 This repository is an example application for the [Spring Boot framework](https://spring.io/projects/spring-boot) that employs the Netflix [DGS framework](https://netflix.github.io/dgs) to expose a GraphQL API and that interacts with a [PostgreSQL DBMS](https://www.postgresql.org/) via [Spring Data JPA](https://spring.io/projects/spring-data-jpa). 
